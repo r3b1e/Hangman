@@ -7,18 +7,26 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="app" class="container">
-        <h1 class="title">Hangman Game</h1>
-        <div class="status">
-            <div id="time">Time: 1:00</div>
-            <div id="score">Score: 0 | High Score: 0</div>
-            <div id="remaining-guesses">Turns left: 6</div>
+     <div class="game-container">
+        <h1>🎯 Hangman Game</h1>
+        <p class="hidden" id="tip">Tip: You can also use your keyboard (A-Z) to guess letters.</p>
+        <button id="tip-button" class="info-item" >Tip</button>
+        
+        <div class="game-info">
+            <div class="info-item" id="remaining-guesses">Turns left: 6</div>
+            <div class="info-item" id="time">Time: 1:00</div>
+            <div class="info-item" id="score">Score: 0 | High Score: 0</div>
         </div>
-        <div id="hangman" class="hangman"></div>
-        <div id="word" class="word"></div>
-        <div class="letters" id="letters"></div>
-        <div id="result" class="result"></div>
-        <button id="play-again" class="play-again hidden">Play Again</button>
+        
+        <div id="hangman"></div>
+        
+        <div id="word"></div>
+        
+        <div id="letters"></div>
+        
+        <div id="result"></div>
+        
+        <button id="play-again" class="hidden">Play Again</button>
     </div>
     <script src="script.js"></script>
 </body>

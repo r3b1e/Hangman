@@ -1,76 +1,157 @@
 body {
-    background-color: #4a9af5;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    transition: background-color 0.5s ease;
-}
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #4a9af5;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
 
-.container {
-    text-align: center;
-}
-
-.title {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.status {
-    margin-bottom: 1rem;
-}
-
-.word {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.letters {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.letter-button {
-    padding: 0.5rem;
-    font-size: 1.25rem;
-    border: 2px solid #333;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.letter-button:disabled {
-    background-color: #ddd;
-    cursor: not-allowed;
-}
-
-.result {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.play-again {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-.hidden {
-    display: none;
-}
-
-.hangman svg {
-    width: 100px;
-    height: 100px;
-}
-
-.hangman img {
-    width: 150px;
-    height: 150px;
-}
+        #tip-button {
+            position: absolute;
+            left: 0;
+            top:0;
+            margin-top: 5%;
+            margin-left: 15px;
+        }
+        
+        .game-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .game-info {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .info-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        
+        #hangman {
+            margin: 20px 0;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #hangman svg {
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 10px;
+        }
+        
+        #word {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 30px 0;
+            letter-spacing: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            min-height: 60px;
+        }
+        
+        #letters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .letter-button {
+            width: 45px;
+            height: 45px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .letter-button:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .letter-button:disabled {
+            background: rgba(255, 255, 255, 0.3);
+            color: rgba(255, 255, 255, 0.6);
+            cursor: not-allowed;
+        }
+        
+        #result {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+            min-height: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        #play-again {
+            font-size: 1.2rem;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 10px;
+            background: #fff;
+            color: #333;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        #play-again:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        @media (max-width: 600px) {
+            .game-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            #word {
+                font-size: 2rem;
+                letter-spacing: 0.3rem;
+            }
+            
+            .letter-button {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
