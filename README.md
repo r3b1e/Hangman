@@ -2,6 +2,8 @@
 
 Hangman Game
 
+The game is deployed at https://hangman-two-drab.vercel.app/. 
+
 A fun and interactive Hangman game built with HTML, CSS, and JavaScript. Test your word-guessing skills, race against the clock, and aim for the high score!
 
 Play the live demo here!
